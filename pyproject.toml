@@ -1,0 +1,34 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools >= 61.0"]
+
+[project]
+description = "A Learning Python Module"
+dynamic = ["version"]
+license = {file = "LICENSE"}
+name = "Python"
+readme = "README.md"
+requires-python = ">= 3.12"
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+]
+
+authors = [
+  {name = "Joao Fernandes", email = "joaogabrielvlf@gmail.com"},
+]
+maintainers = [
+  {name = "Joao Fernandes", email = "joaogabrielvlf@gmail.com"},
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "mypy",
+  "pytest",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "__version__"}

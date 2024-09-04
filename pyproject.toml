@@ -22,7 +22,9 @@ maintainers = [
   {name = "Joao Fernandes", email = "joaogabrielvlf@gmail.com"},
 ]
 
-dependencies = []
+dependencies = [
+  "requests",
+]
 
 [project.optional-dependencies]
 dev = [

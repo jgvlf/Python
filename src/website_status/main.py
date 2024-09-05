@@ -3,7 +3,7 @@ from requests import Response
 
 
 def get_response(url: str) -> Response:
-    return requests.get(url)
+    return requests.get(url, timeout=60)
 
 
 def show_response_info(response: Response) -> None:

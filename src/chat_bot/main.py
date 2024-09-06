@@ -2,23 +2,29 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 
+def __add_option_res() -> str:
+    number_1: float = float(input("Please, enter the first number: "))
+    number_2: float = float(input("Please, enter the second number: "))
+    return f"Your solution: {number_1} + {number_2} = {number_1 + number_2}"
+
+
 def get_response(text: str) -> str:
-    if text in ["hello", "hi", "hey"]:
-        return "Hey there!"
-    if "how are you" in text:
-        return "I'm good thanks!"
-    if "your name" in text:
-        return "My name is Bot :)"
-    if "time" in text:
-        current_time: datetime = datetime.now(timezone(-timedelta(hours=3)))
-        return f"The time is: {current_time:%H:%M}"
-    if text in ["bye", "see you", "goodbye"]:
-        return "It was nice talking to you! Bye!"
-    if "add" in text:
-        number_1: float = float(input("Please, enter the first number: "))
-        number_2: float = float(input("Please, enter the second number: "))
-        return f"Your solution: {number_1} + {number_2} = {number_1 + number_2}"
-    return f'Sorry, I do not understand: "{text}".'
+    current_time: datetime = datetime.now(timezone(-timedelta(hours=3)))
+    options: dict = {
+        text if text in ["hello", "hi", "hey"] else None: "Hey there!",
+        text if "how are you" in text else None: "I'm good thanks!",
+        text if "your name" in text else None: "My name is Bot :)",
+        text if "time" in text else None: f"The time is: {current_time:%H:%M}",
+        (
+            text if text in ["bye", "see you", "goodbye"] else None
+        ): "It was nice talking to you! Bye!",
+        text if "add" in text else None: __add_option_res,
+    }
+    return (
+        options.get(text, f'Sorry, I do not understand: "{text}".')
+        if "add" not in text
+        else options.get(text, f'Sorry, I do not understand: "{text}".')()
+    )
 
 
 user_name: str = input(

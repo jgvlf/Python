@@ -7,8 +7,9 @@ def is_only_letters(text: str) -> None:
     )
     for char in text:
         if char not in alphabet:
-            raise ValueError("The text isn't contain only letters...")
-    print(f'"{text}" is only letters, good job!')
+            msg: str = "The text isn't contain only letters..."
+            raise ValueError(msg)
+        print(f'"{text}" is only letters, good job!')
 
 
 def main() -> None:

@@ -3,9 +3,7 @@ import sys
 
 def default_exception_msg(e: Exception) -> None:
     print(
-        f"Unexpected error {e};"
-        + f"\nType: {type(e)};"
-        + f"\nRepresentation: {e!r}.",
+        f"Unexpected error {e};" + f"\nType: {type(e)};" + f"\nRepresentation: {e!r}.",
     )
 
 
@@ -22,9 +20,7 @@ def welcome_message() -> None:
 
 
 def verify_input_item(item: str) -> bool:
-    if item:
-        return True
-    return False
+    return bool(item)
 
 
 def add_item(item: str, groceries: list[str]) -> None:
@@ -43,9 +39,7 @@ def remove_item(item: str, groceries: list[str]) -> None:
 
 
 def item_exists(item: str, groceries: list[str]) -> bool:
-    if item in groceries:
-        return True
-    return False
+    return item in groceries
 
 
 def edit_item(item: str, new_item: str, groceries: list[str]) -> None:

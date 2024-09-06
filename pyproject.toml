@@ -31,7 +31,7 @@ dependencies = [
 dev = [
   "mypy",
   "pytest",
-  "pylint",
+  "ruff",
 ]
 
 [tool.setuptools.dynamic]

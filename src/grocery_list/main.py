@@ -24,8 +24,7 @@ def welcome_message() -> None:
 def verify_input_item(item: str) -> bool:
     if item:
         return True
-    else:
-        return False
+    return False
 
 
 def add_item(item: str, groceries: list[str]) -> None:
@@ -46,8 +45,7 @@ def remove_item(item: str, groceries: list[str]) -> None:
 def item_exists(item: str, groceries: list[str]) -> bool:
     if item in groceries:
         return True
-    else:
-        return False
+    return False
 
 
 def edit_item(item: str, new_item: str, groceries: list[str]) -> None:

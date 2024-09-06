@@ -25,6 +25,7 @@ maintainers = [
 dependencies = [
   "requests",
   "types-requests",
+  "pytz",
 ]
 
 [project.optional-dependencies]

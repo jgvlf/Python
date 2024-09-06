@@ -1,5 +1,5 @@
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 
 def get_response(text: str) -> str:
@@ -10,7 +10,7 @@ def get_response(text: str) -> str:
     if "your name" in text:
         return "My name is Bot :)"
     if "time" in text:
-        current_time: datetime = datetime.now()
+        current_time: datetime = datetime.now(timezone(-timedelta(hours=3)))
         return f"The time is: {current_time:%H:%M}"
     if text in ["bye", "see you", "goodbye"]:
         return "It was nice talking to you! Bye!"

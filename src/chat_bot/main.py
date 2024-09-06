@@ -8,23 +8,23 @@ def __add_option_res() -> str:
     return f"Your solution: {number_1} + {number_2} = {number_1 + number_2}"
 
 
-def get_response(text: str) -> str:
-    current_time: datetime = datetime.now(timezone(-timedelta(hours=3)))
-    options: dict = {
-        text if text in ["hello", "hi", "hey"] else None: "Hey there!",
-        text if "how are you" in text else None: "I'm good thanks!",
-        text if "your name" in text else None: "My name is Bot :)",
-        text if "time" in text else None: f"The time is: {current_time:%H:%M}",
-        (
-            text if text in ["bye", "see you", "goodbye"] else None
-        ): "It was nice talking to you! Bye!",
-        text if "add" in text else None: __add_option_res,
-    }
-    return (
-        options.get(text, f'Sorry, I do not understand: "{text}".')
-        if "add" not in text
-        else options.get(text, f'Sorry, I do not understand: "{text}".')()
-    )
+def get_response(text: str) -> str:  # noqa: PLR0911
+    match text:
+        case "hello" | "hi" | "hey":
+            return "Hey there!"
+        case t if "how are you" in t:
+            return "I'm good thanks!"
+        case t if "your name" in t:
+            return "My name is Bot :)"
+        case t if "time" in t:
+            current_time: datetime = datetime.now(timezone(-timedelta(hours=3)))
+            return f"The time is: {current_time:%H:%M}"
+        case "bye" | "see you" | "goodbye":
+            return "It was nice talking to you! Bye!"
+        case t if "add" in t:
+            return __add_option_res()
+        case t:
+            return f'Sorry, I do not understand: "{t}".'
 
 
 user_name: str = input(

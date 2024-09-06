@@ -26,8 +26,8 @@ exclude = [
   "site-packages",
   "venv",
 ]
-line-length = 120
 indent-width = 4
+line-length = 120
 target-version = "py312"
 
 [lint]
@@ -36,15 +36,31 @@ select = ["ALL"]
 # Ignore: D - pydocstyle, G - flake8-logging-format ,FA100 - New  style typing
 # ANN - Typing
 ignore = [
-  "ERA001", "D", "TD",   # Keep (maybe)
-
-  # Remove when possible. Also, think a little before removing.
-  "G", "FA100", "ANN", "PTH", "FBT001", "FBT002", "PLR2004", "S608",
-  "S113", "PLR0913", "TRY002", "PERF401", "C901", "B904", "PLR0915", "BLE001",
-  "DTZ007", "S104", "PLR0912", "S301", "FIX002",
-
-  #My Ignores:
-  "T201"
+  "ERA001",
+  "D",
+  "TD", # Keep (maybe)  # Remove when possible. Also, think a little before removing.
+  "G",
+  "FA100",
+  "ANN",
+  "PTH",
+  "FBT001",
+  "FBT002",
+  "PLR2004",
+  "S608",
+  "S113",
+  "PLR0913",
+  "TRY002",
+  "PERF401",
+  "C901",
+  "B904",
+  "PLR0915",
+  "BLE001",
+  "DTZ007",
+  "S104",
+  "PLR0912",
+  "S301",
+  "FIX002", #My Ignores:
+  "T201",
 ]
 # Allow fix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
@@ -55,10 +71,10 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 per-file-ignores = {"__init__.py" = ["E402"], "tests/*" = ["S101"]}
 
 [format]
-quote-style = "double"
 indent-style = "space"
-skip-magic-trailing-comma = false
 line-ending = "auto"
+quote-style = "double"
+skip-magic-trailing-comma = false
 
 # Enable auto-formatting of code examples in docstrings. Markdown,
 # reStructuredText code/literal blocks and doctests are all supported.

@@ -20,7 +20,7 @@ def main() -> None:
             print("Please only enter a Portuguese letters...")
         except Exception as e:
             print(
-                f"Found a unexpected error: \nRepresentation: {repr(e)}; \nType: {type(e)}; \nValue: {e}"
+                f"Found a unexpected error: \nRepresentation: {repr(e)}; \nType: {type(e)}; \nValue: {e}",
             )
 
 

@@ -26,7 +26,7 @@ while True:
             print("You Winning!!! Continue as you be!!!")
         else:
             print(
-                "You Lossing... It's time to a game change, let's turn the game aroud!"
+                "You Lossing... It's time to a game change, let's turn the game aroud!",
             )
         continue
 

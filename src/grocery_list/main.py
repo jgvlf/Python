@@ -5,7 +5,7 @@ def default_exception_msg(e: Exception) -> None:
     print(
         f"Unexpected error {e};"
         + f"\nType: {type(e)};"
-        + f"\nRepresentation: {repr(e)}."
+        + f"\nRepresentation: {repr(e)}.",
     )
 
 
@@ -85,7 +85,7 @@ def main() -> None:
             add_item(new_item, groceries)
         elif user_input == "2":
             item_to_removed: str = input(
-                "What item would you like to remove? >> "
+                "What item would you like to remove? >> ",
             ).lower()
             remove_item(item_to_removed, groceries)
         elif user_input == "3":

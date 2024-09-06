@@ -23,7 +23,7 @@ def get_response(text: str) -> str:
 
 
 user_name: str = input(
-    "Bot: Hi! My name is Bot and I wanna know what's your name?\n"
+    "Bot: Hi! My name is Bot and I wanna know what's your name?\n",
 ).capitalize()
 print(f"Bot: Nice to meet you {user_name}")
 while True:

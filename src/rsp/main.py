@@ -45,13 +45,7 @@ while True:
     # Check moves
     if user_move == ai_move:
         print("It is a tie!")
-    elif user_move == "rock" and ai_move == "scissors":
-        print("You win!")
-        score["You"] += 1
-    elif user_move == "scissors" and ai_move == "paper":
-        print("You win!")
-        score["You"] += 1
-    elif user_move == "paper" and ai_move == "rock":
+    elif user_move == "rock" and ai_move == "scissors" or user_move == "scissors" and ai_move == "paper" or user_move == "paper" and ai_move == "rock":
         print("You win!")
         score["You"] += 1
     else:

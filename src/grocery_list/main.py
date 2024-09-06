@@ -5,7 +5,7 @@ def default_exception_msg(e: Exception) -> None:
     print(
         f"Unexpected error {e};"
         + f"\nType: {type(e)};"
-        + f"\nRepresentation: {repr(e)}.",
+        + f"\nRepresentation: {e!r}.",
     )
 
 
@@ -54,7 +54,7 @@ def edit_item(item: str, new_item: str, groceries: list[str]) -> None:
 
 
 def display(groceries: list[str]) -> None:
-    print(f"___LIST___")
+    print("___LIST___")
     for i, item in enumerate(groceries, 1):
         print(f"{i}: {item.capitalize()}")
 

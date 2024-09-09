@@ -1,5 +1,6 @@
 import sys
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 
 def __add_option_res() -> str:
@@ -17,7 +18,7 @@ def get_response(text: str) -> str:  # noqa: PLR0911
         case t if "your name" in t:
             return "My name is Bot :)"
         case t if "time" in t:
-            current_time: datetime = datetime.now(timezone(-timedelta(hours=3)))
+            current_time: datetime = datetime.now(tz=ZoneInfo("America/Sao_Paulo"))
             return f"The time is: {current_time:%H:%M}"
         case "bye" | "see you" | "goodbye":
             return "It was nice talking to you! Bye!"

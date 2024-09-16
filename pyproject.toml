@@ -26,6 +26,7 @@ dependencies = [
   "requests",
   "types-requests",
   "pytz",
+  "tzdata",
 ]
 
 [project.optional-dependencies]
